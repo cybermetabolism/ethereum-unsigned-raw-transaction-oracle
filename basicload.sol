@@ -2,7 +2,6 @@ pragma solidity ^0.4.20;
 //a loaded 'state'. The state is unaware of it's surrounding world -
 //it doesnt know if the transaction is valid or not. 
 contract tokenState {
-    /* This creates an array with all balances */
     bytes8 displacement;
     bytes32 signature;
     address from;
