@@ -1,0 +1,43 @@
+---
+# Every test file has one or more tests...
+test_name: Test the default api route
+
+# ...and each test has one or more stages (e.g. an HTTP request)
+stages:
+  - name: Make sure we have the right ID
+
+    # Define the request to be made...
+    request:
+      url: http://localhost:5000
+      method: GET
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      body:
+        path: ''
+
+test_name: Check to make sure the other routes are rerouted
+stages:
+  - name: Make sure we have the right ID
+    # Define the request to be made...
+    request:
+      url: http://localhost:5000/api
+      method: GET
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      body:
+        path: 'api'
+    
+    # Define the request to be made...
+    request:
+      url: http://localhost:5000/api/test
+      method: GET
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      body:
+        path: 'api/test'
