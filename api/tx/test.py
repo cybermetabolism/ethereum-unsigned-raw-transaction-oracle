@@ -18,7 +18,10 @@ def test():
     }
 
     c_txn = OrphanTx(txn, priv_key);
+    print("signed transaction: ");
     print(c_txn.signed_txn.to_dict(), '\n')
+
+    print("raw transaction: ");
     print(c_txn.raw_txn.as_dict());
     
 test()

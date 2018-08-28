@@ -5,9 +5,14 @@
 
 #### TODO
 
-+ Data format?
++ data format?
+
++ nonce caulate?
+
++ chainId preview?
 
 + mock the front-end calling;
+
 
 
 #### 
