@@ -22,4 +22,20 @@ class RawTxn:
         return self.__dict__;
 
 
+    def sign(self, priv_key):
+        signed_txn = w3.eth.account.signTransaction(dict(
+            nonce = self.nonce,
+            gasPrice = self.gasprice,
+            gas = self.startgas,
+            to = self.to,
+            value = self.value,
+            data = self.data,
+        ), priv_key);
+
+        self.signed_txn = signed_txn;
+        return signed_txn;
+
+    def send(self):
+        w3.eth.sendRawTransaction(self.signed_txn.rawTransaction)
+
 # test
